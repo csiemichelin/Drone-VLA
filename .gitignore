@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+venv/
+.env
+*.egg-info/
+dist/
+build/
+
+# 工具/IDE
+.vscode/
+.idea/
+.DS_Store
+
+# 測試/型別/覆蓋率快取
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Chainlit/暫存
+.chainlit/.cache/
+.chainlit/logs/
+.chainlit/sessions/
+
+# (可選) 影像資料若為輸入不需版控就忽略
+images/
