@@ -68,7 +68,7 @@ You are a forest aerial-imagery analysis assistant. Please review the provided a
 ## Output rules (HARD CONSTRAINTS):
 - You MUST always output a field called "stage":
   * If you stopped at Stage 1 (image is not a forest aerial photo), set "stage": "Stage 1".
-  * If you continued to Stage 2, set "stage": "Stage 2" and "scenario": "Forest".
+  * If you continued to Stage 2, set "stage": "Stage 2".
 
 Return one JSON object with exactly the keys: priority, event_name, reasons.
 
@@ -80,6 +80,7 @@ Now, output the result for the given image strictly in the following JSON format
 "event_name": "<event type in words>",
 "reasons": "<specific evidence supporting the assigned priority>"
 }
+""".strip()
 
 # Test processor and model loading
 try:
@@ -252,7 +253,7 @@ async def batch_process_images(
 @cl.on_chat_start
 async def start():
     await cl.Message("歡迎使用圖像分析應用！已自動掃描 `images/` 並執行情境真測。你也可以再上傳單張圖片做互動分析。").send()
-    await batch_process_images(dir_path="images", prompt=DEFAULT_PROMPT, recursive=True, save_csv=True)
+    await batch_process_images(dir_path="images", prompt=DEFAULT_PROMPT, recursive=True)
         
 async def process_image(image_path, user_prompt, include_filename=False, send_perf=True):
     try:
