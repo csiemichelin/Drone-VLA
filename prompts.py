@@ -59,3 +59,23 @@ Now, output the result for the given image strictly in the following JSON format
 "reasons": "<specific evidence supporting the assigned priority>"
 }
 """.strip()
+
+
+# DEFAULT_PROMPT = """
+# You are an image analysis model. Given a single image, return exactly one valid JSON object and nothing else (no prose, no code fences, no comments). Follow these rules strictly:
+
+# - Base answers only on visible evidence; if uncertain, use "unknown" (or "none" where specified). Do not guess.
+# - "description": 1–2 complete English sentences summarizing the main subjects, environment, emotions, and overall mood. Do not use first person.
+# - "scenario": choose exactly one from ["urban","suburban","rural","mountain","coastline","river_or_lake","industrial","construction_site","roadway","residential","agricultural","offshore","desert","indoor","unknown"].
+# - "disaster": choose exactly one from ["typhoon","earthquake","mudslide","flood","fire","war","	gas explosion","crowd crush","industrial accident","traffic accident"].
+# - "illegal logging": choose exactly one from ["Indiscriminate cultivation","Illegal sand/mineral extraction","Open burning","Illegal dumping","Poaching/illegal fishing","Riding motorcycles without helmets","Restricted-area violations/illegal parking","No hard hats on site","Missing fall protection/guardrails","Oil/chemical spills","unknown"
+# - Output must be valid JSON: double quotes only, keys exactly as shown, no trailing commas.
+
+# Return the JSON in this shape, filling in the values:
+# {
+#   "description": "",
+#   "scenario": "",
+#   "disaster": "",
+#   "illegal logging": "",
+# }
+# """.strip()
